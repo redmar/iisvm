@@ -1,2 +1,14 @@
 Showing '<%= @image.filename %>' with the tags: <%= @image.tags_string %> <br/>
-<%= image_tag(@image.image.url) %>
+<%= image_tag(@image.image.url) %><br/>
+TAGS
+<% @image.rank! %>
+Result: <%= @image.results %>%
+<table>
+	<% @image.ranking.each do |tag_score_pair| %>
+		<tr>
+		<% tag, score = tag_score_pair %>
+		<%= (@image.has_tag(tag)) ? '<td style="color:green;">' : '<td>' ;%>
+		<%= tag %></td><td><%= score %></td>
+		</tr>
+	<% end%>
+</table>

@@ -33,8 +33,10 @@ class RankImage < ActiveRecord::Base
 
   def rank!
     # hier moet een cmdline ranking programma gedraait worden
-    string_output = `cd #{RAILS_ROOT}/lire; java Score`
     
+    logger.debug("cd #{RAILS_ROOT}/lire; java -jar FeatureExtractor.jar #{image.path}")
+    #string_output = `cd #{RAILS_ROOT}/lire; java Score`
+    string_output = `cd #{RAILS_ROOT}/lire; java -jar FeatureExtractor.jar #{image.path}`
 #     string_output = <<-EOS
 # cannonbeach/Image15.jpg 0.73930544
 # barcelona/Image05.jpg 0.72177225

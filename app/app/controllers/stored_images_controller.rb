@@ -7,4 +7,8 @@ class StoredImagesController < ApplicationController
   def show
     @image = StoredImage.find(params[:id])
   end
+  
+  def rank
+    
+  end
 end
