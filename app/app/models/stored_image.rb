@@ -42,15 +42,13 @@ class StoredImage < ActiveRecord::Base
       puts 'adding ' + score.to_s + ' for tag \'' + tag + '\''
       @ranking[tag] = (@ranking[tag] || 0) + score.to_f 
     end
-    puts @results
+    self.score = @results / tags_array.size * 100.0
+    puts self.score
+    self.save()
     puts @ranking.class
   end
   
   def ranking
     @ranking == nil ? {} : @ranking.sort {|a,b| b[1] <=> a[1]} 
-  end
-  
-  def results
-    @results == nil ? 0 : @results / tags_array.size * 100.0
   end
 end

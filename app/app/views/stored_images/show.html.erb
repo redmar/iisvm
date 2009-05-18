@@ -1,8 +1,8 @@
 Showing '<%= @image.filename %>' with the tags: <%= @image.tags_string %> <br/>
-<%= image_tag(@image.image.url) %><br/>
+<%= image_tag(@image.image.url, :width => '200') %><br/>
 TAGS
 <% @image.rank! %>
-Result: <%= @image.results %>%
+Result: <%= @image.score %>%
 <table>
 	<% @image.ranking.each do |tag_score_pair| %>
 		<tr>

@@ -1,6 +1,6 @@
 There are <%= @images.size %> stored images <br/>
 <ul>
 	<% @images.each do |image| %>
-	<li><%= link_to(image.filename, stored_image_path(image)) %> (<%= image.tags_string %>)</li>
+	<li><%= link_to(image.filename, stored_image_path(image)) %> (<%= image.tags_string %> result: <%= image.score %>%)</li>
 	<% end %>
 </ul>

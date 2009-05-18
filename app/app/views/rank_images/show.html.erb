@@ -1,5 +1,5 @@
 Showing RANKED image '<%= @rank_image.id %>' with the tags: <%#= @rank_image.tags_string %> <br/>
-<%= image_tag(@rank_image.image.url) %><br/>
+<%= image_tag(@rank_image.image.url, :width => '200px') %><br/>
 TAGS
 <% @rank_image.rank! %>
 <table>
