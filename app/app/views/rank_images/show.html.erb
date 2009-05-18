@@ -1,0 +1,12 @@
+Showing RANKED image '<%= @rank_image.id %>' with the tags: <%#= @rank_image.tags_string %> <br/>
+<%= image_tag(@rank_image.image.url) %><br/>
+TAGS
+<% @rank_image.rank! %>
+<table>
+	<% @rank_image.ranking.each do |tag_score_pair| %>
+		<tr>
+		<% tag, score = tag_score_pair %>
+		<td><%= tag %></td><td><%= score %></td>
+		</tr>
+	<% end%>
+</table>

@@ -1,0 +1,5 @@
+<% form_for @rank_image, :html => { :multipart => true } do |f| %>
+	<%= label :image, 'Image:' %><br/>
+	<%= f.file_field :image %>
+	<%= submit_tag 'rank!' %>
+<% end %>

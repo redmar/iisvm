@@ -1,0 +1,6 @@
+There are <%= @rank_images.size %> RANKED images <br/>
+<ul>
+	<% @rank_images.each do |image| %>
+	<li><%= link_to(image.id, rank_image_path(image)) %> (<%= image.tags_string %>)</li>
+	<% end %>
+</ul>
